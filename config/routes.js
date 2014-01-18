@@ -36,8 +36,7 @@ module.exports.routes = {
       controller: 'site'
   },
   '/:id' : {
-      controller: 'site',
-
+      controller: 'site'
   }
 
 

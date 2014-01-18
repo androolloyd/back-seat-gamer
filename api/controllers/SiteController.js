@@ -19,9 +19,10 @@ module.exports = {
     
   
     index : function(req, res) {
-        //console.log(req.url)
+        console.log(req.url.slice(1));
         res.view({
-            twitch: req.url.replace("/","")
+            service: req.get('host'),
+            channel: req.url.slice(1)
         });
     },
 

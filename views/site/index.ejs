@@ -24,7 +24,7 @@
     $(document).ready(function() {
         var config = {
             url: 'https://goinstant.net/androolloyd/back-seat-gamer',
-            room: '<%=twitch%>',
+            room: '<%=service%>-<%=channel%>',
             webrtcList: $('#webrtc-list')[0],
             chatContainer: $('#chat-container')[0]
         };
@@ -65,16 +65,16 @@
     </div>
     <section class="cf">
         <div id="" class="webrtc-container">
-            <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<%= twitch %>" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=<%=twitch%>&auto_play=true&start_volume=25" /></object>
+            <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<%= channel %>" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=<%=channel%>&auto_play=true&start_volume=25" /></object>
         </div>
         <aside>
             <div class="join-url">
-                <span>Invite</span><input type="text" value="http://back-seat-gamer.herokuapp.com/<%= twitch %>" readonly />
+                <span>Invite</span><input type="text" value="http://back-seat-gamer.herokuapp.com/<%= channel %>" readonly />
             </div>
             <iframe frameborder="0"
                     scrolling="no"
                     id="chat_embed"
-                    src="http://twitch.tv/chat/embed?channel=<%=twitch%>&amp;popout_chat=true"
+                    src="http://twitch.tv/chat/embed?channel=<%=channel%>&amp;popout_chat=true"
                     height="500"
                     width="335">
             </iframe>
