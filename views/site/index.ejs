@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Back Seat Gamer</title>
+
+    <link type="text/css" rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="https://cdn.goinstant.net/widgets/webrtc/latest/webrtc.css" />
+    <link rel="stylesheet" href="https://cdn.goinstant.net/widgets/chat/latest/chat.css" />
+    <link rel="stylesheet" href="/styles/conference.css" />
+
+    <script type="text/javascript" src="/js/async.js"></script>
+    <script type="text/javascript" src="/js/lodash.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<script src="https://cdn.goinstant.net/v1/platform.min.js"></script>
+<script src="https://cdn.goinstant.net/widgets/webrtc/latest/webrtc.min.js"></script>
+<script src="https://cdn.goinstant.net/widgets/chat/latest/chat.min.js"></script>
+<script src="https://cdn.goinstant.net/widgets/user-colors/latest/user-colors.min.js"></script>
+<script src="/js/demo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var config = {
+            url: 'https://goinstant.net/androolloyd/back-seat-gamer',
+            room: '<%=twitch%>',
+            webrtcList: $('#webrtc-list')[0],
+            chatContainer: $('#chat-container')[0]
+        };
+
+        // Auto Copy
+        $('.join-url input').on('click', function() {
+            this.select();
+        });
+
+        var supported = goinstant.widgets.WebRTC.supported;
+
+        if (!supported) {
+            var error = 'Your browser does not support WebRTC. For an up-to-date' +
+                    'list of supported browsers please see www.webrtc.org';
+
+            console.log(error);
+
+            return;
+
+        }
+
+        // Setup Demo
+        var Demo = window.goinstant.WebRTCDemo;
+        var demo = new Demo(config);
+        demo.initialize(function(err) {
+            if (err) {
+                throw err;
+            }
+        });
+
+
+    });
+</script>
+
+<div class="main">
+    <div class="leave-modal">
+        <p>The room owner has left the conference.</p>
+    </div>
+    <section class="cf">
+        <div id="" class="webrtc-container">
+            <object type="application/x-shockwave-flash" height="100%" width="100%" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=<%= twitch %>" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" /><param name="flashvars" value="hostname=www.twitch.tv&channel=<%=twitch%>&auto_play=true&start_volume=25" /></object>
+        </div>
+        <aside>
+            <div class="join-url">
+                <span>Invite</span><input type="text" value="192.168.0.100:1337/<%= twitch %>" readonly />
+            </div>
+            <iframe frameborder="0"
+                    scrolling="no"
+                    id="chat_embed"
+                    src="http://twitch.tv/chat/embed?channel=<%=twitch%>&amp;popout_chat=true"
+                    height="500"
+                    width="335">
+            </iframe>
+            <div id="chat-container" class="chat-container"></div>
+        </aside>
+    </section>
+    <div id="webrtc-list" class="webrtc-list"></div>
+    <div style="display:none;">
+        <object type="application/x-shockwave-flash" name="frontpage_player_container" data="http://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" width="620px" height="378px" id="live_frontpage_player_flash" style="visibility: visible;"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="allowFullScreen" value="true"><param name="wmode" value="transparent"><param name="flashvars" value="channel=planetside2&amp;res=360p&amp;hostname=www.twitch.tv&amp;initCallback=Twitch.player._initCallback_1"></object>
+    </div>
+    <a href="#" class="leave-button">End Conference</a>
+</div>
+</body>
+</html>

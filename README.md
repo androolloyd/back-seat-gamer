@@ -1,0 +1,2 @@
+# yoloswag
+### a Sails application
