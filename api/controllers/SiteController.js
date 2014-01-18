@@ -19,7 +19,7 @@ module.exports = {
     
   
     index : function(req, res) {
-        console.log(req.url)
+        //console.log(req.url)
         res.view({
             twitch: req.url.replace("/","")
         });
