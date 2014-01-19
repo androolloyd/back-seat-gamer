@@ -90,6 +90,20 @@ window.addEventListener("load", function() {
 
 });
 
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        console.log('received a message');
+        if (request.action == "logo-clicked") {
+            console.log('received a message of a click');
+
+            $('.gi-chat').toggle();
+            $('.gi-userlist').toggle();
+
+            sendResponse({success: true});
+
+        }
+    });
+
 
 
 
