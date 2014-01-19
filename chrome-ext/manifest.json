@@ -34,6 +34,14 @@
                 "vendor/goinstant/user-list.css"
             ]
         }
+    ],
+    "web_accessible_resources": [
+        "vendor/goinstant/chat/images/sprite.png",
+        "vendor/goinstant/chat/images/sprite@2x.png",
+        "vendor/goinstant/chat/images/transparent.png",
+        "vendor/goinstant/user-list/images/sprite.png",
+        "vendor/goinstant/user-list/images/sprite@2x.png",
+        "vendor/goinstant/user-list/images/transparent.png"
     ]
 //    "content_security_policy": "default-src 'self' 'unsafe-eval' https://goinstant.net https://*.goinstant.net",
 //    "permissions": [

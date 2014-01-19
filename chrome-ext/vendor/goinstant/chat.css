@@ -130,7 +130,7 @@
       display: inline-block;
       width: 25px;
       height: 25px;
-      background-image: url("chat/./images/sprite.png");
+      background-image: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/sprite.png");
       background-repeat: no-repeat;
       background-position: -1px 0;
       border-radius: 2px;
@@ -138,7 +138,7 @@
 
     @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
       .gi-chat .gi-color {
-        background-image: url("chat/./images/sprite@2x.png");
+        background-image: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/sprite@2x.png");
         background-size: 140px 52px;
       }
     }
@@ -284,7 +284,7 @@
   width: 225px;
   height: 7px;
   border-radius: 3px 0 0 0;
-  background: url("chat/./images/transparent.png");
+  background: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/transparent.png");
   background: rgba(0,0,0,.7);
 }
 
@@ -296,7 +296,7 @@
     top: -23px;
     right: -45px;
     padding: 7px 0 0 9px;
-    background: url("chat/./images/transparent.png");
+    background: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/transparent.png");
     background: rgba(0,0,0,.7);
     border-radius: 3px 3px 0 0;
     cursor: pointer;
@@ -328,13 +328,13 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-image: url("chat/./images/sprite.png");
+  background-image: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/sprite.png");
   background-repeat: no-repeat;
 }
 
 @media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
   .gi-userlist .gi-icon {
-    background-image: url("chat/./images/sprite@2x.png");
+    background-image: url("chrome-extension://__MSG_@@extension_id__/vendor/goinstant/chat/images/sprite@2x.png");
     background-size: 140px 52px;
   }
 }
