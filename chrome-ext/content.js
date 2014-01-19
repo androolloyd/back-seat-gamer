@@ -28,6 +28,8 @@ function createChat(room) {
             var width = 275;
             $(this).css('margin-right', width*(index+1));
         });
+        console.log('created chat for room');
+        console.log(room);
     });
 }
 function createUserList(room,side) {
@@ -47,6 +49,9 @@ function createUserList(room,side) {
             throw err;
         }
         // Now it should render on the page with any connected users
+
+        console.log('created user list for room');
+        console.log(room);
     });
 }
 function connect(service, chan, side) {
@@ -75,9 +80,13 @@ function connect(service, chan, side) {
     });
 }
 window.addEventListener("load", function() {
-    connect("twitch","nightblue3","right");
-    connect("twitch","riotgames","left");
-    //connect("twitch","kaostv","left");
+
+    var twitchUsername = window.location.pathname.replace('/', '');
+    console.log('detected twitch username: ' + twitchUsername);
+
+    connect("twitch",twitchUsername,"right");
+//    connect("twitch","riotgames","left");
+//    //connect("twitch","kaostv","left");
 
 });
 
