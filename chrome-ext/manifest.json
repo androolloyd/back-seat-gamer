@@ -1,11 +1,14 @@
 {
     "name": "Backseat Gamer",
-    "version": "0.1",
+    "version": "0.2",
     "manifest_version": 2,
     "browser_action": {
         "default_title": "Backseat Gamers",
-        "default_icon": "static/icon.png"
+        "default_icon": "static/backseatgamer16.png"
     },
+    "icons": { "16": "static/backseatgamer16.png",
+        "48": "static/backseatgamer48.png",
+        "128": "static/backseatgamer128.png" },
     "background": {
         "scripts": ["background.js"],
         "persistent": true
