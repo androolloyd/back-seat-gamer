@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Text Synchronization App</title>
+    <script src="https://cdn.goinstant.net/v1/platform.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <input type="text" name="name" id="sync" />
+    <script>
+        $(document).ready(function () {
+            // The connection url is provided to you by viewing the application from the
+            // GoInstant dashboard. This url tells GoInstant where your application and
+            // account are located in order to connect.
+            var url = 'https://goinstant.net/androolloyd/back-seat-gamer';
+
+            goinstant.connect(url, function (err, connection, lobby) {
+                if (err) {
+                    // Could not connect to GoInstant
+                    throw err;
+                }
+
+                var name = lobby.key('name');
+                var el = $('input[name="name"]');
+
+                // The listener will be invoked every time the value of name is changed
+                // by another user
+                name.on('set', function(value, context) {
+                    el.val(value);
+                });
+
+                el.on('keyup', function() {
+                    name.set($(this).val());
+                });
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
