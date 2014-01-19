@@ -19,10 +19,7 @@
                 "http://twitch.tv/*",
                 "http://www.twitch.tv/*",
                 "https://twitch.tv/*",
-                "https://www.twitch.tv/*",
-                "http://back-seat-gamer.herokuapp.com/*",
-                "http://backseatgamer.tv/*",
-                "http://www.backseatgamer.tv/*"
+                "https://www.twitch.tv/*"
             ],
 //            "matches": ["*://*/*"],
             "js": [
